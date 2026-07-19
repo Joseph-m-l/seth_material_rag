@@ -6,7 +6,7 @@ from sentence_transformers import SentenceTransformer
 input_file = "seth_chunks.jsonl"
 db_dir = "./chroma_db_v3"
 
-model = SentenceTransformer("C:/SP/Workbook/models/multilingual-e5-large")
+model = SentenceTransformer("intfloat/multilingual-e5-large")
 
 client = Client(Settings(persist_directory=db_dir, is_persistent=True))
 collection = client.get_or_create_collection("seth_speaks")
