@@ -56,6 +56,7 @@ There is no guarantee that off-the-shelf embeddings can follow this shift withou
 - Multilingual E5 (`multilingual-e5-large`) shows significantly better alignment with human-annotated conceptual clusters.
 - Hybrid retrieval (dense embeddings + LLM reranking) yields the most coherent answers when querying across session boundaries.
 - A pre-built ChromaDB index is included in `/chroma_db_v3/` so you can start querying immediately without processing the corpus yourself.
+- **Example answers:** See [`notes/example_answers.md`](notes/example_answers.md) for real responses from the pipeline.
 
 ## Disclaimer
 
