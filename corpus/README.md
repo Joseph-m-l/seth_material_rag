@@ -76,5 +76,14 @@ More chapters will be added as processing continues.
 
 All annotations and chunking respect speaker boundaries: only SETH segments are indexed for retrieval.
 
+## Pre-built index
+
+A pre-built ChromaDB index for Chapters 1–9 of *"Seth Speaks"* is available in `/chroma_db_v3/`.
+This index contains vector embeddings only — the original text cannot be reconstructed from it.
+To use it, run:
+python retrieval/query.py --index chroma_db_v3/ --question "Your question here"
+
+
+
 For questions about the data preparation process, open an issue in this repository.
 
