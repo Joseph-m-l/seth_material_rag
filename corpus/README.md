@@ -56,8 +56,9 @@ Annotated XML is spot-checked for tag consistency using DeepSeek as a second pas
 Annotation prompt
 The exact prompt used for Qwen2.5-Coder is available in annotations/qwen_2.5_coder_prompt_for_S_Sp.md
 
-Currently indexed in ChromaDB
-Seth Speaks, Chapters 1–9 (Sessions 511–537, personal sessions excluded):
+### Currently indexed in ChromaDB:
+
+Book: Seth Speak
 
 Chapter 1: I Do Not Have a Physical Body, Yet I Am Writing This Book
 
