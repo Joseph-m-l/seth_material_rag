@@ -72,3 +72,24 @@ If you find this experiment useful or interesting, you can support further resea
 
 Source texts © respective rights holders (used for research purposes).
 All code and annotations in this repository: MIT License.
+
+## Quick Start
+
+```bash
+git clone https://github.com/Joseph-m-l/seth_material_rag
+cd seth_material_rag
+pip install -r requirements.txt
+python retrieval/ask_seth_LMStudio.py
+```
+
+Prerequisites:
+
+LM Studio with Qwen2.5-32B-Instruct loaded and API server running on port 1234.
+
+Python 3.9+.
+
+~3 GB disk space for the embedding model (downloaded automatically on first run).
+
+24+ GB VRAM recommended for the full LLM (quantized versions may fit in less).
+
+The script will download intfloat/multilingual-e5-large on first launch and connect to the pre-built ChromaDB index in /chroma_db_v3/.
