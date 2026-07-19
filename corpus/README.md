@@ -30,4 +30,11 @@ The cleaned `.txt` is passed to `Qwen2.5-Coder-14B-Instruct` with a structured p
     </utterance>
   </dialogue>
 </session>
+</session>
+```
+Speaker values: Seth, Rob, Jane
+Type values: statement, note, delivery, chapter_start
+
+### Step 3: Verification
+Annotated XML is spot-checked for tag consistency using DeepSeek as a second pass.
 
