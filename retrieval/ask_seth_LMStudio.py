@@ -5,7 +5,7 @@ from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 
 db_dir = "./chroma_db_v3"
-model = SentenceTransformer("C:/SP/Workbook/models/multilingual-e5-large")
+model = SentenceTransformer("intfloat/multilingual-e5-large")
 
 client = Client(Settings(persist_directory=db_dir, is_persistent=True))
 collection = client.get_collection("seth_speaks")
