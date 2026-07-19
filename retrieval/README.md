@@ -1,5 +1,7 @@
 # ChromaDB + Qwen Retrieval Pipeline
 
+See [Quick Start](../README.md#quick-start) in the root README for the fastest way to get started.
+
 ## Quick start (pre-built index)
 
 A pre-built ChromaDB index is included in `/chroma_db_v3/`. The retrieval script expects a running LM Studio in server mode instance with `Qwen2.5-32B-Instruct` loaded.
