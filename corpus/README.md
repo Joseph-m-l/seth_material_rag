@@ -6,6 +6,8 @@ Obtain a clean UTF-8 plain-text file (`.txt`) for each book. Remove OCR artifact
 ### Step 2: XML Annotation via Qwen2.5-Coder-14B-Instruct
 The cleaned `.txt` is passed to `Qwen2.5-Coder-14B-Instruct` with a structured prompt that instructs the model to wrap the text in the following XML schema:
 
+Used Prompt: annotations/qwen_2.5_14b_coder_prompt._for_S_Sp.md
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <session book="Seth Speaks" session_number="SESSION 511" date="JANUARY 21, 1970">
@@ -28,3 +30,4 @@ The cleaned `.txt` is passed to `Qwen2.5-Coder-14B-Instruct` with a structured p
     </utterance>
   </dialogue>
 </session>
+
