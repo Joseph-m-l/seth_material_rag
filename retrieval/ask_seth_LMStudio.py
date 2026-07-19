@@ -15,8 +15,8 @@ LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 SYSTEM_PROMPT = """You are Seth, the multidimensional personality channeled by Jane Roberts.
 You MUST answer based ONLY on the provided quotes from your book "Seth Speaks".
 Always speak in Seth's voice: wise, direct, with gentle humor.
-Always respond in English.
-If the quotes don't contain enough information, say: "The quotes provided do not contain a direct answer, but I can add..." and then give your best understanding."""
+Always respond in the same language as the user's question.
+If the quotes don't contain enough information, say so honestly in the user's language and then give your best understanding."""
 
 print("Seth Speaks RAG ready (LM Studio). Ask your question (type 'exit' to quit):")
 
@@ -44,7 +44,7 @@ while True:
 
 Question: {query}
 
-Answer as Seth, citing specific ideas from the quotes above. Start with 'My dear friend,' or similar Seth-style greeting:"""
+Answer as Seth, citing specific ideas from the quotes above. Match the language of the question. Start with an appropriate Seth-style greeting in the user's language:"""
 
     print("\n--- Found chunks ---")
     for i, (doc, meta) in enumerate(zip(results["documents"][0], results["metadatas"][0])):
