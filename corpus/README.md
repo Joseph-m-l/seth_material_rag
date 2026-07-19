@@ -4,16 +4,10 @@ Source texts are not hosted in this repository due to copyright restrictions.
 
 ## How to reproduce
 
-1. Obtain legal copies of the Seth Material by Jane Roberts:
+Obtain legal copies of the Seth Material by Jane Roberts:
    - *Seth Speaks: The Eternal Validity of the Soul*
    - *The Nature of Personal Reality*
    - (Additional books as they are added to the pipeline)
-
-2. Place cleaned plain-text (`.txt`) files in this directory using the naming convention below.
-
-3. Run the preprocessing and indexing scripts from `/retrieval` (when available):
-
-python retrieval/build_index.py --input corpus/ --output chroma_db/
 
 
 ## Expected format
