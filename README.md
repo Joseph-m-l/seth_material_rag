@@ -24,7 +24,7 @@ Philosophical and esoteric texts from the mid-20th century present unique challe
 | **Vectorization**       | `❌ all-MiniLM-L6-v2` — Failed: semantic drift on metaphysical concepts                         |
 |                         | `✅ multilingual-e5-large` — Success: captures deep conceptual links                            |
 | **Storage & Retrieval** | ChromaDB + Qwen2.5-32B-Instruct                                                                 |
-|:------------------------|:------------------------------------------------------------------------------------------------|
+
 
 **A note on language:** Both the embedding model (`multilingual-e5-large`) and the retrieval LLM (`Qwen2.5-32B-Instruct`) are multilingual by design. The source material is English, but a reader asking questions in Russian, Spanish, or any other language should receive equally coherent answers. The structure of reality — if these texts describe it — is not supposed to be language-dependent.
 
