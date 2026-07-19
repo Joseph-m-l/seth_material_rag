@@ -2,11 +2,12 @@
 
 ## Quick start (pre-built index)
 
-A pre-built ChromaDB index is included in `/chroma_db_v3/`.
+A pre-built ChromaDB index is included in `/chroma_db_v3/`. The retrieval script expects a running LM Studio in server mode instance with `Qwen2.5-32B-Instruct` loaded.
+
 
 ```bash
 pip install chromadb sentence-transformers
-python retrieval/query.py --index chroma_db_v3/ --question "What does Seth say about the nature of the soul?"
+python retrieval/ask_seth_LMStudio.py --index chroma_db_v3/ --question "What does Seth say about the nature of the soul?"
 ```
 
 Build from scratch
