@@ -50,14 +50,14 @@ The cleaned `.txt` is passed to `Qwen2.5-Coder-14B-Instruct` with a structured p
 Speaker values: Seth, Rob, Jane
 Type values: statement, note, delivery, chapter_start
 
-Step 3: Verification
+### Step 3: Verification
 Annotated XML is spot-checked for tag consistency using DeepSeek as a second pass.
 
 Annotation prompt
-The exact prompt used for Qwen2.5-Coder is available in annotations/prompt.md.
+The exact prompt used for Qwen2.5-Coder is available in annotations/qwen_2.5_coder_prompt_for_S_Sp.md
 
 Currently indexed in ChromaDB
-Seth Speaks, Part One — Chapters 1–9 (Sessions 511–537, personal sessions excluded):
+Seth Speaks, Chapters 1–9 (Sessions 511–537, personal sessions excluded):
 
 Chapter 1: I Do Not Have a Physical Body, Yet I Am Writing This Book
 
@@ -78,9 +78,6 @@ Chapter 8: Sleep, Dreams, and Consciousness
 Chapter 9: The "Death" Experience
 
 More chapters will be added as processing continues.
-
-Notes
-Personal sessions (non-Seth, private material) are excluded from the indexed corpus.
 
 All annotations and chunking respect speaker boundaries: only SETH segments are indexed for retrieval.
 
