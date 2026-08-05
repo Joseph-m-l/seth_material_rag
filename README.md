@@ -66,7 +66,7 @@ This is a work-in-progress hobby project. Expect bugs, broken scripts, and evolv
 
 If you find this experiment useful or interesting, you can support further research via Lightning Network:
 
-> josephml@coinos.io
+> josephm1@coinos.io
 
 ## License
 
