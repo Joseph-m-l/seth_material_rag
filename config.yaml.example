@@ -1,0 +1,17 @@
+retriever:
+  embedding_model: "intfloat/multilingual-e5-large"
+  chroma_dir: "./data/chroma"
+  collection_name: "seth_speaks_v2"
+  top_k: 7
+
+generator:
+  provider: "openai_compatible"
+  openai_compatible:
+    base_url: "http://localhost:1234/v1"
+    model: "qwen2.5-vl-32b-instruct"
+    api_key: "not-needed"
+
+generation_params:
+  temperature: 0.6
+  max_completion_tokens: 2048
+  presence_penalty: 1.5
