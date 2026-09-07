@@ -1,5 +1,5 @@
-chromadb
-sentence-transformers
-lxml
-requests
-tqdm
+gradio>=4.0
+chromadb>=0.4
+sentence-transformers>=2.2
+openai>=1.0
+PyYAML>=6.0
