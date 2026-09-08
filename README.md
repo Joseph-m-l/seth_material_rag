@@ -79,8 +79,11 @@ cp config.yaml.example config.yaml
 ```
 Edit config.yaml:
 chroma_dir – path to the Chroma index folder (default ./chroma_db_v2 works if you keep it there)
+
 embedding_model – leave as "intfloat/multilingual-e5-large" to download automatically, or point to a local path
+
 base_url and model – set to your local LLM server (e.g., LM Studio)
+
 generation_params – adjust temperature, max tokens, etc. as you like
 
 4. Running the LLM Server:
