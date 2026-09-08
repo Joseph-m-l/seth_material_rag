@@ -6,7 +6,7 @@ This repository is a personal research log and experimental playground for study
 
 ## The Problem
 
-Philosophical and esoteric texts from the mid-20th century present unique challenges for modern NLP:
+Philosophical texts from the mid-20th century present unique challenges for modern NLP:
 
 - **Highly abstract terminology** that lacks direct analogues in standard datasets.
 - **Non-linear narrative structures** where context spans across multiple sessions and books.
@@ -23,10 +23,10 @@ Philosophical and esoteric texts from the mid-20th century present unique challe
 | **Chunking Strategy**   | Strictly by speaker (`SETH` segments)                                                           |
 | **Vectorization**       | `❌ all-MiniLM-L6-v2` — Failed: semantic drift on metaphysical concepts                         |
 |                         | `✅ multilingual-e5-large` — Success: captures deep conceptual links                            |
-| **Storage & Retrieval** | ChromaDB + Qwen2.5-32B-Instruct (served via LM Studio)                                          |
+| **Storage & Retrieval** | ChromaDB + Qwen2.5-VL-32B-Instruct (served via LM Studio)                                          |
 
 
-**A note on language:** Both the embedding model (`multilingual-e5-large`) and the retrieval LLM (`Qwen2.5-32B-Instruct`), served locally via LM Studio are multilingual by design. The source material is English, but a reader asking questions in Russian, Spanish, or any other language should receive equally coherent answers. The structure of reality — if these texts describe it — is not supposed to be language-dependent.
+**A note on language:** Both the embedding model (`multilingual-e5-large`) and the retrieval LLM (`Qwen2.5-VL-32B-Instruct`), served locally via LM Studio are multilingual by design. The source material is English, but a reader asking questions in Russian, Spanish, or any other language should receive equally coherent answers. The structure of reality — if these texts describe it — is not supposed to be language-dependent.
 
 ## Why This Matters for NLP
 
@@ -40,23 +40,65 @@ There is no guarantee that off-the-shelf embeddings can follow this shift withou
 
 ├── corpus/ # Data preparation guide and scripts (source texts not hosted)
 
-├── annotations/ # XML annotation schemas and labeled data
-
-├── embeddings/ # Vectorization scripts and evaluation notes
-
-├── retrieval/ # ChromaDB + Qwen retrieval pipeline
+├── chroma_db_v2/ # Pre-built vector database index built on CLEAN corpus
 
 └── notes/ # Working notes, observations, dead ends
 
 > **Note on corpus/:** Source texts are not hosted in this repository due to copyright restrictions. To reproduce the experiment, obtain legal copies of the Seth Material by Jane Roberts and follow the data preparation guide in `corpus/README.md`.
 
-## Preliminary Results
+## Quick Start (Web Interface)
 
-- General-purpose embeddings (`all-MiniLM-L6-v2`) collapse on metaphysical concepts, producing high similarity scores for semantically unrelated passages.
-- Multilingual E5 (`multilingual-e5-large`) shows significantly better alignment with human-annotated conceptual clusters.
-- Hybrid retrieval (dense embeddings + LLM reranking) yields the most coherent answers when querying across session boundaries.
-- A pre-built ChromaDB index is included in `/chroma_db_v3/` so you can start querying immediately without processing the corpus yourself.
-- **Example answers:** See [`notes/example_answers.md`](notes/example_answers.md) for real responses from the pipeline.
+A Gradio-based web interface for querying the *Seth Speaks* book (Jane Roberts) using a local RAG pipeline:
+- Embeddings: `multilingual-e5-large`
+- Vector store: ChromaDB (index included in the repository)
+- Generation: local LLM via LM Studio (or any OpenAI‑compatible server)
+
+## Features
+
+- Choose your language; answers in your chosen language (9 interface languages supported)
+- Clean web UI built with Gradio
+- Shows source fragments (session numbers and excerpts)
+- Fully local – no data leaves your computer
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Joseph-m-l/seth_material_rag.git
+cd seth_material_rag
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Configure the application:
+```bash
+cp config.yaml.example config.yaml
+```
+Edit config.yaml:
+chroma_dir – path to the Chroma index folder (default ./chroma_db_v2 works if you keep it there)
+embedding_model – leave as "intfloat/multilingual-e5-large" to download automatically, or point to a local path
+base_url and model – set to your local LLM server (e.g., LM Studio)
+generation_params – adjust temperature, max tokens, etc. as you like
+
+4. Running the LLM Server:
+This project uses a local LLM via an OpenAI‑compatible API. 
+LM Studio is recommended:
+-Launch LM Studio.
+-Load a model (e.g., Qwen2.5-VL-32B-Instruct or any other).
+-Start the local server on port 1234 (tab "Local Server").
+-Ensure config.yaml points to the correct base_url (default http://localhost:1234/v1).
+
+If you use Ollama, vLLM, text-generation-webui, or another server, adjust the configuration accordingly.
+
+5. Launch the Application
+```bash
+python app.py
+```
+Open http://localhost:7860 in your browser.
+
 
 ## Disclaimer
 
@@ -73,23 +115,3 @@ If you find this experiment useful or interesting, you can support further resea
 Source texts © respective rights holders (used for research purposes).
 All code and annotations in this repository: MIT License.
 
-## Quick Start
-
-```bash
-git clone https://github.com/Joseph-m-l/seth_material_rag
-cd seth_material_rag
-pip install -r requirements.txt
-python retrieval/ask_seth_LMStudio.py
-```
-
-Prerequisites:
-
-LM Studio with Qwen2.5-32B-Instruct loaded and API server running on port 1234.
-
-Python 3.9+.
-
-~3 GB disk space for the embedding model (downloaded automatically on first run).
-
-24+ GB VRAM recommended for the full LLM (quantized versions may fit in less).
-
-The script will download intfloat/multilingual-e5-large on first launch and connect to the pre-built ChromaDB index in /chroma_db_v3/.

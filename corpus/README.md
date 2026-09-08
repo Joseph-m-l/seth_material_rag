@@ -6,7 +6,6 @@ Source texts are not hosted in this repository due to copyright restrictions.
 
 Obtain legal copies of the Seth Material by Jane Roberts:
    - *Seth Speaks: The Eternal Validity of the Soul*
-   - *The Nature of Personal Reality*
    - (Additional books as they are added to the pipeline)
 
 
@@ -26,9 +25,6 @@ The cleaned `.txt` is passed to `Qwen2.5-Coder-14B-Instruct` with a structured p
  <date>JANUARY 21, 1970</date>
 </meta>
 <dialogue>
- <utterance speaker="Seth" type="statement">
-   <text>Now: I bid you, Joseph, a good evening.</text>
- </utterance>
  <utterance speaker="Rob" type="note">
    <text>(9:10 P.M. WEDNESDAY)</text>
  </utterance>
@@ -41,7 +37,7 @@ The cleaned `.txt` is passed to `Qwen2.5-Coder-14B-Instruct` with a structured p
 </dialogue>
 </session>
 ```
-Speaker values: Seth, Rob, Jane
+Speaker values: Seth, Rob, Jane, etc
 Type values: statement, note, delivery, chapter_start
 
 ### Step 3: Verification
@@ -54,34 +50,35 @@ The exact prompt used for Qwen2.5-Coder is available in annotations/qwen_2.5_cod
 
 Book: Seth Speak
 
-Chapter 1: I Do Not Have a Physical Body, Yet I Am Writing This Book
-
+Chapter 1: I Do Not Have a Physical Body, Yet I Am Writing This Book 
 Chapter 2: My Present Environment, Work, and Activities
-
-Chapter 3: My Work and Those Dimensions of Reality Into Which It Takes Me
-
+Chapter 3: My Work and Those Dimensions of Reality Into Which It Takes Me 
 Chapter 4: Reincarnational Dramas
-
-Chapter 5: How Thoughts Form Matter — Coordination Points
-
+Chapter 5: How Thoughts Form Matter — Coordination Points 
 Chapter 6: The Soul and the Nature of Its Perception
-
 Chapter 7: The Potentials of the Soul
-
 Chapter 8: Sleep, Dreams, and Consciousness
-
-Chapter 9: The "Death" Experience
-
-More chapters will be added as processing continues.
+Chapter 9: The “Death” Experience
+Chapter 10: “Death” Conditions in Life
+Chapter 11: After-Death Choices and the Mechanics of Transition 
+Chapter 12: Reincarnational Relationships
+Chapter 13: Reincarnation, Dreams, and the Hidden Male and Female Within the Self 
+Chapter 14: Stories of the Beginning, and the Multidimensional God 
+Chapter 15: Reincarnational Civilizations, Probabilities, and More on the Multidimensional God 
+Chapter 16: Probable Systems, Men, and Gods
+Chapter 17: Probabilities, the Nature of Good and Evil, and Religious Symbolism 
+Chapter 18: Various Stages of Consciousness, Symbolism, and Multiple Focus 
+Chapter 19: Alternate Presents and Multiple Focus
+Chapter 20: Questions and Answers
+Chapter 21: The Meaning of Religion
+Chapter 22: A Goodbye and an Introduction: Aspects of Multidimensional Personality as Viewed Through My Own Experience
 
 All annotations and chunking respect speaker boundaries: only SETH segments are indexed for retrieval.
 
 ## Pre-built index
 
-A pre-built ChromaDB index for Chapters 1–9 of *"Seth Speaks"* is available in `/chroma_db_v3/`.
+A pre-built ChromaDB index for *"Seth Speaks"* is available in `/chroma_db_v2/`.
 This index contains vector embeddings only — the original text cannot be reconstructed from it.
-To use it, run:
-python retrieval/query.py --index chroma_db_v3/ --question "Your question here"
 
 
 
