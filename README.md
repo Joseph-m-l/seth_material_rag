@@ -77,24 +77,25 @@ pip install -r requirements.txt
 ```bash
 cp config.yaml.example config.yaml
 ```
-Edit config.yaml:
-chroma_dir – path to the Chroma index folder (default ./chroma_db_v2 works if you keep it there)
+    Edit config.yaml:
+    chroma_dir – path to the Chroma index folder (default ./chroma_db_v2 works if you keep it there)
 
-embedding_model – leave as "intfloat/multilingual-e5-large" to download automatically, or point to a local path
+    embedding_model – leave as "intfloat/multilingual-e5-large" to download automatically, or point to a local path
 
-base_url and model – set to your local LLM server (e.g., LM Studio)
+    base_url and model – set to your local LLM server (e.g., LM Studio)
 
-generation_params – adjust temperature, max tokens, etc. as you like
+    generation_params – adjust temperature, max tokens, etc. as you like
 
 4. Running the LLM Server:
-This project uses a local LLM via an OpenAI‑compatible API. 
-LM Studio is recommended:
--Launch LM Studio.
--Load a model (e.g., Qwen2.5-VL-32B-Instruct or any other).
--Start the local server on port 1234 (tab "Local Server").
--Ensure config.yaml points to the correct base_url (default http://localhost:1234/v1).
+    This project uses a local LLM via an OpenAI‑compatible API. 
+    LM Studio is recommended:
+    -Launch LM Studio.
 
-If you use Ollama, vLLM, text-generation-webui, or another server, adjust the configuration accordingly.
+    -Load a model (e.g., Qwen2.5-VL-32B-Instruct or any other).
+    -Start the local server on port 1234 (tab "Local Server").
+    -Ensure config.yaml points to the correct base_url (default http://localhost:1234/v1).
+
+    If you use Ollama, vLLM, text-generation-webui, or another server, adjust the configuration accordingly.
 
 5. Launch the Application
 ```bash
