@@ -89,10 +89,13 @@ cp config.yaml.example config.yaml
 4. Running the LLM Server:
     This project uses a local LLM via an OpenAI‑compatible API. 
     LM Studio is recommended:
+    
     -Launch LM Studio.
 
     -Load a model (e.g., Qwen2.5-VL-32B-Instruct or any other).
+    
     -Start the local server on port 1234 (tab "Local Server").
+
     -Ensure config.yaml points to the correct base_url (default http://localhost:1234/v1).
 
     If you use Ollama, vLLM, text-generation-webui, or another server, adjust the configuration accordingly.
